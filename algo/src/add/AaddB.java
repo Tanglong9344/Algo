@@ -2,7 +2,7 @@ package add;
 
 import java.util.Scanner;
 
-public class AaddB1 {
+public class AaddB {
 	@SuppressWarnings("resource")
 	public static void main(String args[]){
 		Scanner cin = new Scanner(System.in);
