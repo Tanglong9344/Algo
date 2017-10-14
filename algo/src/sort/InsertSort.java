@@ -4,46 +4,46 @@ import java.util.Random;
 
 public class InsertSort {
 	public static void main(String[] args) {
-		final int LENGTH=10;//Êı×é³¤¶È
-		final int RANGE =100;//Êı¾İ·¶Î§
+		final int LENGTH=10;//æ•°ç»„é•¿åº¦
+		final int RANGE =100;//æ•°æ®èŒƒå›´
 		int [] intArr = new int [LENGTH];
-		//Êı¾İ³õÊ¼»¯
+		//æ•°æ®åˆå§‹åŒ–
 		Random rd = new Random();
 		for(int i=0;i<LENGTH;i++){
 			intArr[i]=rd.nextInt(RANGE);
 		}
-		//ÅÅĞòÇ°
-		System.out.println("ÅÅĞòÇ°:");
+		//æ’åºå‰
+		System.out.println("æ’åºå‰:");
 		for(int i : intArr){
 			System.out.print(i+" ");
 		}
 		System.out.println();
 		long begin = System.nanoTime();
-		//²åÈëÅÅĞò
+		//æ’å…¥æ’åº
 		insertSort(intArr);
 		long end = System.nanoTime();
-		System.out.printf("²åÈëÅÅĞò¹²ºÄÊ±%fÄÉÃë%n",(end-begin)/10.0);
-		//²åÈëÅÅĞòºó
-		System.out.println("²åÈëÅÅĞòºó:");
+		System.out.printf("æ’å…¥æ’åºå…±è€—æ—¶%fçº³ç§’%n",(end-begin)/10.0);
+		//æ’å…¥æ’åºå
+		System.out.println("æ’å…¥æ’åºå:");
 		for(int i : intArr){
 			System.out.print(i+" ");
 		}
 		System.out.println();
 	}
-	//²åÈëÅÅĞòÊµÏÖ·½·¨
+	//æ’å…¥æ’åºå®ç°æ–¹æ³•
 	static void insertSort(int[] intArr){
 		int i,j;
 		int l=intArr.length;
 		int tmp;
 		for(i=1;i<l;i++){
 			tmp=intArr[i];
-			//Êı¾İÒÆ¶¯
+			//æ•°æ®ç§»åŠ¨
 			for(j=i-1;j>=0&&intArr[j]>tmp;j--){
 				intArr[j+1]=intArr[j];
 			}
 			intArr[j+1]=tmp;
-			//ÏÔÊ¾Ã¿´Î²Ù×÷µÄ½á¹û
-			System.out.printf("µÚ%d´Î²Ù×÷£º%n",i);
+			//æ˜¾ç¤ºæ¯æ¬¡æ“ä½œçš„ç»“æœ
+			System.out.printf("ç¬¬%dæ¬¡æ“ä½œï¼š%n",i);
 			for(int v : intArr){
 				System.out.print(v+" ");
 			}
