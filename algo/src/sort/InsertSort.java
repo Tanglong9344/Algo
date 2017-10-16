@@ -30,6 +30,7 @@ public class InsertSort {
 		}
 		System.out.println();
 	}
+
 	//插入排序实现方法
 	static void insertSort(int[] intArr){
 		int i,j;
