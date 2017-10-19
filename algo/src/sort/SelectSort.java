@@ -4,13 +4,11 @@ import java.util.Random;
 
 public class SelectSort {
 	public static void main(String[] args) {
-		final int LENGTH=10;//数组长度
-		final int RANGE =100;//数据范围
-		int [] intArr = new int [LENGTH];
+		int [] intArr = new int [CommonFinal.LENGTH];
 		//数据初始化
 		Random rd = new Random();
-		for(int i=0;i<LENGTH;i++){
-			intArr[i]=rd.nextInt(RANGE);
+		for(int i=0;i<CommonFinal.LENGTH;i++){
+			intArr[i]=rd.nextInt(CommonFinal.RANGE);
 		}
 		//排序前
 		System.out.println("排序前:");
