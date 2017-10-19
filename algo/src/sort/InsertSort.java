@@ -1,3 +1,7 @@
+/**
+ * 时间复杂度O(n2)
+ */
+
 package sort;
 
 import java.util.Random;
@@ -5,6 +9,7 @@ import java.util.Random;
 public class InsertSort {
 	public static void main(String[] args) {
 		int [] intArr = new int [CommonFinal.LENGTH];
+		//插入排序
 		//数据初始化
 		Random rd = new Random();
 		for(int i=0;i<CommonFinal.LENGTH;i++){
@@ -32,9 +37,9 @@ public class InsertSort {
 	//插入排序实现方法
 	static void insertSort(int[] intArr){
 		int i,j;
-		int l=intArr.length;
+		int len=intArr.length;
 		int tmp;
-		for(i=1;i<l;i++){
+		for(i=1;i<len;i++){
 			tmp=intArr[i];
 			//数据移动
 			for(j=i-1;j>=0&&intArr[j]>tmp;j--){
