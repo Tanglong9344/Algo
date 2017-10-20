@@ -58,19 +58,17 @@ public class BubbleSort {
 	}
 	//冒泡排序实现方法1
 	static void bubbleSort1(int [] intArr){
-		int i,j,swap;
-		int l=intArr.length;
+		int i,j;
+		int len=intArr.length;
 		boolean stop = false;//如果已经有序则停止操作
 		//进行n-1趟操作
-		for(i=0;i<l-1&&!stop;i++){
+		for(i=0;i<len-1&&!stop;i++){
 			stop=true;
-			for(j=l-1;j>i;j--){
+			for(j=len-1;j>i;j--){
 				//升序
 				if(intArr[j]<intArr[j-1]){
+					swap(intArr,j,j-1);//交换
 					stop=false;
-					swap=intArr[j];
-					intArr[j]=intArr[j-1];
-					intArr[j-1]=swap;
 				}
 			}
 		}
@@ -79,22 +77,28 @@ public class BubbleSort {
 
 	//冒泡排序实现方法2
 	static void bubbleSort2(int [] intArr){
-		int i,j,swap;
-		int l=intArr.length;
+		int i,j;
+		int len=intArr.length;
 		boolean stop = false;//如果已经有序则停止操作
 		//进行n-1趟操作
-		for(i=0;i<l-1&&!stop;i++){
+		for(i=0;i<len-1&&!stop;i++){
 			stop=true;
-			for(j=0;j<l-i-1;j++){
+			for(j=0;j<len-i-1;j++){
 				//升序
 				if(intArr[j]>intArr[j+1]){
-					swap=intArr[j];
-					intArr[j]=intArr[j+1];
-					intArr[j+1]=swap;
+					swap(intArr,j,j+1);//交换
 					stop=false;
 				}
 			}
 		}
 		System.out.printf("共进行%d趟操作%n",i);
+	}
+
+	// 交换方法
+	static void swap(int[] arr,int i,int j){
+		int tmp;
+		tmp=arr[i];
+		arr[i]=arr[j];
+		arr[j]=tmp;
 	}
 }
