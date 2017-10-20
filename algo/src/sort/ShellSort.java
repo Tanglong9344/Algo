@@ -1,3 +1,7 @@
+/**
+ * 时间复杂度<O(n2)
+ */
+
 package sort;
 
 import java.util.Random;
@@ -32,28 +36,30 @@ public class ShellSort {
 	static void shellSort(int[] intArr){
 		int i,j,k;
 		int len=intArr.length;
-		double len2 = intArr.length;
-		len2=Math.ceil(len2);
+		int gap=len;//每个分组间的增量
 		int tmp;
 		//分组长度为1时终止操作
-		while(1 != (len=(int)len2)){
-			len2=Math.ceil(len2/2);
+		while(gap>1){
+			//增量减半
+			gap=(int) Math.ceil(gap/2);
 			//各个分组使用插入排序
-			for(k=0;k<len;k++){
-				for(i=k+len;i<intArr.length;i+=len){
+			for(k=0;k<gap;k++){
+				for(i=k+gap;i<intArr.length;i+=gap){
 					tmp=intArr[i];
-					for(j=i-len;j>=0&&tmp<intArr[j];j-=len){
-						intArr[j+len]=intArr[j];
+					//移动
+					for(j=i-gap;j>=k&&tmp<intArr[j];j-=gap){
+						intArr[j+gap]=intArr[j];
 					}
-					intArr[j+len]=tmp;
-					//显示每次操作的结果
-					System.out.printf("第%d类分组排序结果：%n",len);
-					for(int v : intArr){
-						System.out.print(v+" ");
-					}
-					System.out.println();
+					//插入
+					intArr[j+gap]=tmp;
 				}
 			}
+			//显示每次操作的结果
+			System.out.printf("第%d类分组排序结果：%n",gap);
+			for(int v : intArr){
+				System.out.print(v+" ");
+			}
+			System.out.println();
 		}
 	}
 }

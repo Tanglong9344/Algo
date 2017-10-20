@@ -1,3 +1,7 @@
+/**
+ * 时间复杂度O(NlogN)
+ */
+
 package sort;
 
 import java.util.Random;
@@ -29,6 +33,7 @@ public class QuickSort {
 		}
 		System.out.println();
 	}
+
 	//快速排序实现方法
 	//采用递归思想
 	static void quickSort(int[] intArr,int start,int end){
@@ -37,46 +42,41 @@ public class QuickSort {
 			return;
 		}
 		//具体操作
-		int l = start;//低位
-		int h = end;//高位
+		int low = start;//低位
+		int high = end;//高位
 		int key=intArr[start];//以第一个数为参考值
-		int swap;
-		while (l < h) {
+		while (low < high) {
 			//从高位开始遍历比较
 			//跳过大于等于参考值的数据
-			while(l<h && intArr[h]>=key) {
-				h--;
+			while(low<high && intArr[high]>=key) {
+				high--;
 			}
-			if (l<h) {
-				swap=intArr[h];
-				intArr[h]=intArr[l];
-				intArr[l]=swap;
-				l++;
-			}
-
+			//小于key的值移动到key左边
+			intArr[low]=intArr[high];
 			//跳过小于等于参考值的数据
-			while(l<h && intArr[l]<=key) {
-				l++;
+			while(low<high && intArr[low]<=key) {
+				low++;
 			}
-			if(l<h){
-				swap=intArr[l];
-				intArr[l]=intArr[h];
-				intArr[h]=swap;
-				h--;
-			}
+			//大于key的值移动到key右边
+			intArr[high]=intArr[low];
 		}
+		//将参考值放回
+		intArr[low]=key;
+		//显示每次排序的结果
 		sum++;
 		System.out.printf("第%d次操作结果:%n",sum);
 		for(int v : intArr){
 			System.out.print(v+" ");
 		}
 		System.out.println("");
-		//继续操作
-		if(l>start) {
-			quickSort(intArr, start, l-1);
+		//递归操作
+		//左半部分
+		if(low>start) {
+			quickSort(intArr, start, low-1);
 		}
-		if(h<end) {
-			quickSort(intArr, l+1, end);
+		//右半部分
+		if(high<end) {
+			quickSort(intArr, low+1, end);
 		}
 	}
 }
