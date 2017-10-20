@@ -1,3 +1,7 @@
+/**
+ * 时间复杂度O(n2)
+ */
+
 package sort;
 
 import java.util.Random;
