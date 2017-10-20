@@ -24,7 +24,7 @@ public class ShellSort {
 		//希尔排序
 		shellSort(intArr);
 		long end = System.nanoTime();
-		System.out.printf("希尔排序共耗时%f纳秒%n",(end-begin)/10.0);
+		System.out.printf("希尔排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//希尔排序后
 		System.out.println("希尔排序后:");
 		for(int i : intArr){

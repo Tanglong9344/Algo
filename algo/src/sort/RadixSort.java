@@ -20,7 +20,7 @@ public class RadixSort {
 		//基数排序
 		radixSort(intArr);
 		long end = System.nanoTime();
-		System.out.printf("基数排序共耗时%f纳秒%n",(end-begin)/10.0);
+		System.out.printf("基数排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//基数排序后
 		System.out.println("基数排序后:");
 		for(int i : intArr){

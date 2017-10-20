@@ -20,7 +20,7 @@ public class MergeSort {
 		//归并排序
 		mergeSort(intArr);
 		long end = System.nanoTime();
-		System.out.printf("归并排序共耗时%f纳秒%n",(end-begin)/10.0);
+		System.out.printf("归并排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//归并排序后
 		System.out.println("归并排序后:");
 		for(int i : intArr){

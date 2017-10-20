@@ -25,7 +25,7 @@ public class InsertSort {
 		//插入排序
 		insertSort(intArr);
 		long end = System.nanoTime();
-		System.out.printf("插入排序共耗时%f纳秒%n",(end-begin)/10.0);
+		System.out.printf("插入排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//插入排序后
 		System.out.println("插入排序后:");
 		for(int i : intArr){

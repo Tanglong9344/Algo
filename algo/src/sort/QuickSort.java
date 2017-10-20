@@ -25,7 +25,7 @@ public class QuickSort {
 		//快速排序
 		quickSort(intArr,0,intArr.length-1);
 		long end = System.nanoTime();
-		System.out.printf("快速排序共耗时%f纳秒%n",(end-begin)/10.0);
+		System.out.printf("快速排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//快速排序后
 		System.out.println("快速排序后:");
 		for(int i : intArr){

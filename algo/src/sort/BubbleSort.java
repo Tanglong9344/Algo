@@ -25,7 +25,7 @@ public class BubbleSort {
 		//冒泡排序1
 		bubbleSort1(intArr);
 		long end = System.nanoTime();
-		System.out.printf("冒泡排序1共耗时%f纳秒%n",(end-begin)/10.0);
+		System.out.printf("冒泡排序1共耗时%f纳秒%n",(end-begin)/1.0);
 		//冒泡排序1排序后后
 		System.out.println("冒泡排序1后:");
 		for(int i : intArr){
