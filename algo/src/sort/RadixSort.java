@@ -21,14 +21,14 @@ public class RadixSort {
 			intArr[i]=rd.nextInt(CommonFinal.RANGE);
 		}
 		//排序前
-		System.out.println("排序前        :"+Arrays.toString(intArr));
+		System.out.println("排序前        ："+Arrays.toString(intArr));
 		long begin = System.nanoTime();
 		//基数排序
 		radixSort(intArr);
 		long end = System.nanoTime();
 		System.out.printf("基数排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//基数排序后
-		System.out.println("基数排序后:"+Arrays.toString(intArr));
+		System.out.println("基数排序后："+Arrays.toString(intArr));
 	}
 
 	//基数排序实现方法
