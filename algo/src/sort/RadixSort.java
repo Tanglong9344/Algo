@@ -1,3 +1,10 @@
+/**
+ * 时间复杂度O(d(n+rd)),空间复杂度O(rd)
+ * d:关键字数目，rd关键字取值范围
+ *
+ * 操作过程:分配，收集。
+ */
+
 package sort;
 
 import java.util.Random;
@@ -30,7 +37,6 @@ public class RadixSort {
 	}
 
 	private static void radixSort(int[] intArr) {
-		// TODO Auto-generated method stub
 
 	}
 }

@@ -1,5 +1,5 @@
 /**
- * 时间复杂度O(NlogN)
+ * 平均时间复杂度O(NlogN)，最坏时间复杂度O(N2)，空间复杂度O(logN)
  */
 
 package sort;

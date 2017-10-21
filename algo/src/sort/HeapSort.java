@@ -1,5 +1,5 @@
 /**
- * 在最坏情况下，时间复杂度O(NlogN)
+ * 在最坏情况下，时间复杂度O(NlogN)，空间复杂度O(1)
  *
  * 实施过程：
  * 1，新建堆
@@ -38,43 +38,39 @@ public class HeapSort {
 		System.out.println();
 	}
 
-	public static  void heapSort(int[] a){
-		int len=a.length;
+	public static  void heapSort(int[] arr){
+		int len=arr.length;
 		//循环建堆
-		for(int i=0;i<len-1;i++){
+		for(int i=1;i<len;i++){
 			//建堆
-			buildMaxHeap(a,len-1-i);
+			buildMaxHeap(arr,len-i);
 			//交换堆顶和最后一个元素
-			swap(a,0,len-1-i);
+			swap(arr,0,len-i);
 		}
 	}
-	private static  void swap(int[] data, int i, int j) {
-		int tmp=data[i];
-		data[i]=data[j];
-		data[j]=tmp;
-	}
-	//对data数组从0到lastIndex建大顶堆
-	private static void buildMaxHeap(int[] data, int lastIndex) {
+	//对数组从0到lastIndex建大顶堆
+	private static void buildMaxHeap(int[]arr, int lastIndex) {
 		//从lastIndex处节点（最后一个节点）的父节点开始
-		for(int i=(lastIndex-1)/2;i>=0;i--){
+		int i,k,biggerIndex;
+		for(i=(lastIndex-1)/2;i>=0;i--){
 			//k保存正在判断的节点
-			int k=i;
+			k=i;
 			//如果当前k节点的子节点存在
 			while(k*2+1<=lastIndex){
 				//k节点的左子节点的索引
-				int biggerIndex=2*k+1;
+				biggerIndex=2*k+1;
 				//如果biggerIndex小于lastIndex，即biggerIndex+1代表的k节点的右子节点存在
 				if(biggerIndex<lastIndex){
 					//若果右子节点的值较大
-					if(data[biggerIndex]<data[biggerIndex+1]){
+					if(arr[biggerIndex]<arr[biggerIndex+1]){
 						//biggerIndex总是记录较大子节点的索引
 						biggerIndex++;
 					}
 				}
 				//如果k节点的值小于其较大的子节点的值
-				if(data[k]<data[biggerIndex]){
+				if(arr[k]<arr[biggerIndex]){
 					//交换他们
-					swap(data,k,biggerIndex);
+					swap(arr,k,biggerIndex);
 					//将biggerIndex赋予k，开始while循环的下一次循环，重新保证k节点的值大于其左右子节点的值
 					k=biggerIndex;
 				}else{
@@ -82,5 +78,12 @@ public class HeapSort {
 				}
 			}
 		}
+	}
+
+	//交换操作
+	private static  void swap(int[] arr, int i, int j) {
+		int tmp=arr[i];
+		arr[i]=arr[j];
+		arr[j]=tmp;
 	}
 }

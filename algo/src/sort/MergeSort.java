@@ -1,3 +1,7 @@
+/**
+ * 时间复杂度O(NlogN),空间复杂度O(N)
+ */
+
 package sort;
 
 import java.util.Random;
@@ -30,6 +34,6 @@ public class MergeSort {
 	}
 
 	private static void mergeSort(int[] intArr) {
-		// TODO Auto-generated method stub
+
 	}
 }
