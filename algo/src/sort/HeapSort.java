@@ -3,7 +3,11 @@
  *
  * 实施过程：
  * 1，新建堆
- * 2，重建堆
+ * 2，交换元素
+ * 3，重建堆
+ *
+ * 使用一维数组存储二叉树
+ * 其中节点i的左子节点为2i+1,右子节点为2i+2
  */
 
 package sort;
@@ -37,45 +41,41 @@ public class HeapSort {
 		for(int i=1;i<len;i++){
 			//建堆
 			buildMaxHeap(arr,len-i);
-			//交换堆顶和最后一个元素
+			System.out.printf("第%2d次建立大顶堆    :%s%n",i,Arrays.toString(arr));
+			//交换堆顶和最后第i个元素
 			swap(arr,0,len-i);
-			System.out.printf("第%2d次建立大顶堆:%s%n",i,Arrays.toString(arr));
+			System.out.printf("第%2d次交换堆顶元素:%s%n",i,Arrays.toString(arr));
 		}
 	}
-	//对数组从0到lastIndex建大顶堆
-	private static void buildMaxHeap(int[]arr, int lastIndex) {
-		//从lastIndex处节点（最后一个节点）的父节点开始
-		int i,k,biggerIndex;
-		for(i=(lastIndex-1)/2;i>=0;i--){
+	//对数组从0到len建大顶堆
+	private static void buildMaxHeap(int[]arr, int len) {
+		int i,k,big;
+		//从最后一个节点的父节点开始
+		for(i=(len-1)/2;i>=0;i--){
 			//k保存正在判断的节点
 			k=i;
 			//如果当前k节点的子节点存在
-			while(k*2+1<=lastIndex){
+			if(k*2+1<=len){
 				//k节点的左子节点的索引
-				biggerIndex=2*k+1;
-				//如果biggerIndex小于lastIndex，即biggerIndex+1代表的k节点的右子节点存在
-				if(biggerIndex<lastIndex){
+				big=k*2+1;
+				//如果big小于len，即big+1代表的k节点的右子节点存在
+				if(big<len){
 					//若果右子节点的值较大
-					if(arr[biggerIndex]<arr[biggerIndex+1]){
-						//biggerIndex总是记录较大子节点的索引
-						biggerIndex++;
+					if(arr[big]<arr[big+1]){
+						//big总是记录较大子节点的索引
+						big=big+1;
 					}
 				}
 				//如果k节点的值小于其较大的子节点的值
-				if(arr[k]<arr[biggerIndex]){
-					//交换他们
-					swap(arr,k,biggerIndex);
-					//将biggerIndex赋予k，开始while循环的下一次循环，重新保证k节点的值大于其左右子节点的值
-					k=biggerIndex;
-				}else{
-					break;
+				if(arr[k]<arr[big]){
+					swap(arr,k,big);//交换
 				}
 			}
 		}
 	}
 
 	//交换操作
-	private static  void swap(int[] arr, int i, int j) {
+	private static  void swap(int[] arr, int i,int j) {
 		int tmp=arr[i];
 		arr[i]=arr[j];
 		arr[j]=tmp;
