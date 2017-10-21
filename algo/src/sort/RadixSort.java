@@ -64,8 +64,9 @@ public class RadixSort {
 				x=(arr[j]%(int)Math.pow(10,i))/(int)Math.pow(10,i-1);
 				list=lists.get(x);
 				list.add(arr[j]);
-				lists.set(x, list);
 			}
+			//显示每次操作结果
+			System.out.printf("第%2d操作：%s%n",i,lists);
 			cnt=0;//元素计数器;
 			//收集队列元素;
 			for(k=0;k<10;k++){
