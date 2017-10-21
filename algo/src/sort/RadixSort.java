@@ -2,12 +2,14 @@
  * 时间复杂度O(d(N+rd))=O(d.N),空间复杂度O(rd)
  * d:关键字数目，rd关键字取值范围
  *
- * 操作过程:分配，收集。
+ * 基本操作过程:数据分配，数据收集。
  */
 
 package sort;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class RadixSort {
@@ -19,7 +21,7 @@ public class RadixSort {
 			intArr[i]=rd.nextInt(CommonFinal.RANGE);
 		}
 		//排序前
-		System.out.println("排序前:"+Arrays.toString(intArr));
+		System.out.println("排序前        :"+Arrays.toString(intArr));
 		long begin = System.nanoTime();
 		//基数排序
 		radixSort(intArr);
@@ -29,7 +31,51 @@ public class RadixSort {
 		System.out.println("基数排序后:"+Arrays.toString(intArr));
 	}
 
-	private static void radixSort(int[] intArr) {
-
+	//基数排序实现方法
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static void radixSort(int[] arr){
+		//首先确定排序的趟数;
+		//找出最大值
+		int max=arr[0];
+		for(int i=1;i<arr.length;i++){
+			if(arr[i]>max){
+				max=arr[i];
+			}
+		}
+		int time=0;//记录数据最大位数
+		//位数统计;
+		while(max>0){
+			max/=10;
+			time++;
+		}
+		//建立10个队列，分别用于存储各个位数数字为0-9的数据
+		List<ArrayList> lists=new ArrayList<ArrayList>();
+		ArrayList<Integer> list = null;//用于暂存数据
+		for(int i=0;i<10;i++){
+			list=new ArrayList<Integer>();
+			lists.add(list);
+		}
+		int i,j,x,k,cnt;
+		//进行time次分配和收集;
+		for(i=1;i<=time;i++){
+			//分配数组元素;
+			for(j=0;j<arr.length;j++){
+				//得到数字的第time位数;
+				x=(arr[j]%(int)Math.pow(10,i))/(int)Math.pow(10,i-1);
+				list=lists.get(x);
+				list.add(arr[j]);
+				lists.set(x, list);
+			}
+			cnt=0;//元素计数器;
+			//收集队列元素;
+			for(k=0;k<10;k++){
+				list=lists.get(k);
+				while(list.size()>0){
+					arr[cnt]=list.get(0);
+					list.remove(0);
+					cnt++;
+				}
+			}
+		}
 	}
 }
