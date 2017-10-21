@@ -4,6 +4,7 @@
 
 package sort;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class QuickSort {
@@ -16,22 +17,14 @@ public class QuickSort {
 			intArr[i]=rd.nextInt(CommonFinal.RANGE);
 		}
 		//排序前
-		System.out.println("排序前:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("排序前:"+Arrays.toString(intArr));
 		long begin = System.nanoTime();
 		//快速排序
 		quickSort(intArr,0,intArr.length-1);
 		long end = System.nanoTime();
 		System.out.printf("快速排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//快速排序后
-		System.out.println("快速排序后:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("快速排序后:"+Arrays.toString(intArr));
 	}
 
 	//快速排序实现方法
@@ -64,11 +57,7 @@ public class QuickSort {
 		intArr[low]=key;
 		//显示每次排序的结果
 		sum++;
-		System.out.printf("第%d次操作结果:%n",sum);
-		for(int v : intArr){
-			System.out.print(v+" ");
-		}
-		System.out.println("");
+		System.out.printf("第%2d次操作结果:%s%n",sum,Arrays.toString(intArr));
 		//递归操作
 		//左半部分
 		if(low>start) {

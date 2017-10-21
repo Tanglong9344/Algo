@@ -4,6 +4,7 @@
 
 package sort;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class SelectSort {
@@ -15,22 +16,14 @@ public class SelectSort {
 			intArr[i]=rd.nextInt(CommonFinal.RANGE);
 		}
 		//排序前
-		System.out.println("排序前:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("排序前:"+Arrays.toString(intArr));
 		long begin = System.nanoTime();
 		//选择排序
 		selectSort(intArr);
 		long end = System.nanoTime();
 		System.out.printf("选择排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//选择排序后
-		System.out.println("选择排序后:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("选择排序后:"+Arrays.toString(intArr));
 	}
 	//选择排序实现方法
 	static void selectSort(int [] intArr){
@@ -52,7 +45,8 @@ public class SelectSort {
 				intArr[i]=intArr[minPos];
 				intArr[minPos]=swap;
 			}
+			//显示每趟操作的结果
+			System.out.printf("第%2d趟操作:%s%n",i+1,Arrays.toString(intArr));
 		}
-		System.out.printf("共进行%d趟操作%n",i);
 	}
 }

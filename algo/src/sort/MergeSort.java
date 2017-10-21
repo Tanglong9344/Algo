@@ -4,6 +4,7 @@
 
 package sort;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class MergeSort {
@@ -15,22 +16,14 @@ public class MergeSort {
 			intArr[i]=rd.nextInt(CommonFinal.RANGE);
 		}
 		//排序前
-		System.out.println("排序前:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("排序前:"+Arrays.toString(intArr));
 		long begin = System.nanoTime();
 		//归并排序
 		mergeSort(intArr);
 		long end = System.nanoTime();
 		System.out.printf("归并排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//归并排序后
-		System.out.println("归并排序后:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("归并排序后:"+Arrays.toString(intArr));
 	}
 
 	private static void mergeSort(int[] intArr) {

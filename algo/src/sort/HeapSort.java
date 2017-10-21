@@ -8,6 +8,7 @@
 
 package sort;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class HeapSort {
@@ -20,22 +21,14 @@ public class HeapSort {
 			intArr[i]=rd.nextInt(CommonFinal.RANGE);
 		}
 		//排序前
-		System.out.println("排序前:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("排序前:"+Arrays.toString(intArr));
 		long begin = System.nanoTime();
 		//堆排序
 		heapSort(intArr);
 		long end = System.nanoTime();
 		System.out.printf("堆排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//堆排序排序后
-		System.out.println("堆排序后:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("堆排序后:"+Arrays.toString(intArr));
 	}
 
 	public static  void heapSort(int[] arr){
@@ -46,6 +39,7 @@ public class HeapSort {
 			buildMaxHeap(arr,len-i);
 			//交换堆顶和最后一个元素
 			swap(arr,0,len-i);
+			System.out.printf("第%2d次建立大顶堆:%s%n",i,Arrays.toString(arr));
 		}
 	}
 	//对数组从0到lastIndex建大顶堆

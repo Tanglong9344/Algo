@@ -4,6 +4,7 @@
 
 package sort;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class ShellSort {
@@ -15,22 +16,14 @@ public class ShellSort {
 			intArr[i]=rd.nextInt(CommonFinal.RANGE);
 		}
 		//排序前
-		System.out.println("排序前:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("排序前:"+Arrays.toString(intArr));
 		long begin = System.nanoTime();
 		//希尔排序
 		shellSort(intArr);
 		long end = System.nanoTime();
 		System.out.printf("希尔排序共耗时%f纳秒%n",(end-begin)/1.0);
 		//希尔排序后
-		System.out.println("希尔排序后:");
-		for(int i : intArr){
-			System.out.print(i+" ");
-		}
-		System.out.println();
+		System.out.println("希尔排序后:"+Arrays.toString(intArr));
 	}
 	//希尔排序实现方法
 	static void shellSort(int[] intArr){
@@ -55,11 +48,7 @@ public class ShellSort {
 				}
 			}
 			//显示每次操作的结果
-			System.out.printf("第%d类分组排序结果：%n",gap);
-			for(int v : intArr){
-				System.out.print(v+" ");
-			}
-			System.out.println();
+			System.out.printf("第%2d类分组排序结果：%s%n",gap,Arrays.toString(intArr));
 		}
 	}
 }
