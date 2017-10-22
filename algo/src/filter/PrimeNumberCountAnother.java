@@ -1,16 +1,27 @@
+/**
+ * Preprocess to count the number
+ * of <strong>prime number</strong>
+ * between 0-N
+ */
+
 package filter;
 
 import java.util.Random;
 
-/**
- * Preprocess to count  the number
- * of  <strong>prime number</strong>
- * between 0-N
- */
-
 public class PrimeNumberCountAnother {
 	static final int N = 10000;
 	static int[] intArr = new int[N];
+	//Test
+	public static void main(String[] args) {
+		new PrimeNumberCountAnother();//preprocess
+		int countNum = 10000;//count times
+		Random random = new Random();
+		for(int i=0;i<countNum;i++){
+			int num = random.nextInt(1000);
+			System.out.printf("The number of prime number between 0-%d is %d%n",num,intArr[num]);
+		}
+	}
+
 	//Preprocess
 	public PrimeNumberCountAnother(){
 		int i,j;
@@ -43,16 +54,5 @@ public class PrimeNumberCountAnother {
 			}
 		}
 		return count;
-	}
-
-	//Test
-	public static void main(String[] args) {
-		new PrimeNumberCountAnother();//preprocess
-		int countNum = 10000;//count times
-		Random random = new Random();
-		for(int i=0;i<countNum;i++){
-			int num = random.nextInt(1000);
-			System.out.printf("The number of prime number between 0-%d is %d%n",num,intArr[num]);
-		}
 	}
 }

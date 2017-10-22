@@ -1,3 +1,7 @@
+/**
+ * 数塔问题，计算从塔顶到塔底，使经过的各层数字之和最大
+ */
+
 package dynamic_programming;
 
 public class NumberTower {

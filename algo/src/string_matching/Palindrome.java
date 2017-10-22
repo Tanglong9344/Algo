@@ -1,3 +1,7 @@
+/**
+ * 回文数判断
+ */
+
 package string_matching;
 
 public class Palindrome {

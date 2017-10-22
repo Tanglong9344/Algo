@@ -1,10 +1,10 @@
-package filter;
-
 /**
  * Filter to get
  * <strong>prime number</strong>
  * between 0-N
  */
+
+package filter;
 
 public class PrimeNumbersBetweenN {
 	static final int N = 100;

@@ -1,3 +1,9 @@
+/**
+ * 阶乘计算
+ * 1，递归方式
+ * 2，循环相乘
+ */
+
 package math;
 
 public class Factorial {

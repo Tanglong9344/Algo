@@ -1,3 +1,7 @@
+/**
+ * 公共部分
+ */
+
 package sort;
 
 public class CommonFinal {

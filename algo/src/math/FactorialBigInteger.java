@@ -1,3 +1,7 @@
+/**
+ * 超大数的阶乘计算
+ */
+
 package math;
 
 import java.math.BigInteger;

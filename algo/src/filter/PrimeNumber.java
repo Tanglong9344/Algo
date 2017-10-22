@@ -1,3 +1,7 @@
+/**
+ * 判断一个数是否是质数(Prime Number)
+ */
+
 package filter;
 
 public class PrimeNumber {

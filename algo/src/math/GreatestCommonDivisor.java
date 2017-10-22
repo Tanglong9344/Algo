@@ -1,3 +1,7 @@
+/**
+ * 最大公约数
+ */
+
 package math;
 
 public class GreatestCommonDivisor {

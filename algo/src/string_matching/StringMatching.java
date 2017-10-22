@@ -1,3 +1,7 @@
+/**
+ * 字符串匹配
+ */
+
 package string_matching;
 
 public class StringMatching {

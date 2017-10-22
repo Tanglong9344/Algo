@@ -1,12 +1,12 @@
+/**
+ * Preprocess to count the number
+ * of <strong>prime number</strong>
+ * between 0-N
+ */
+
 package filter;
 
 import java.util.Random;
-
-/**
- * Preprocess to count  the number
- * of  <strong>prime number</strong>
- * between 0-N
- */
 
 public class PrimeNumberCount {
 	static final int N = 10000;
