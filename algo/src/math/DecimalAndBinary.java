@@ -46,7 +46,7 @@ public class DecimalAndBinary {
 			return b;
 		}
 		int s=0;
-		int m = 1;
+		int m=1;
 		while(b!=0){
 			s+=(b%10)*m;
 			b/=10;
