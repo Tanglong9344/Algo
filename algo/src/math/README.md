@@ -5,4 +5,4 @@
 + [大数的阶乘](https://github.com/Tanglong9344/algo/blob/master/algo/src/math/FactorialBigInteger.java)
 + [最大公约数](https://github.com/Tanglong9344/algo/blob/master/algo/src/math/GreatestCommonDivisor.java)
 + [进制转换](https://github.com/Tanglong9344/algo/blob/master/algo/src/math/DecimalAndBinary.java)
-+ [1-N求和](https://github.com/Tanglong9344/algo/blob/master/algo/src/math/SumCalculate.java)
++ [前N个数求和](https://github.com/Tanglong9344/algo/blob/master/algo/src/math/SumCalculate.java)
