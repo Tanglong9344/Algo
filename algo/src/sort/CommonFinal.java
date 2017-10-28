@@ -5,6 +5,6 @@
 package sort;
 
 public class CommonFinal {
-	final static int LENGTH=15;//数组长度
-	final static int RANGE =100;//数据范围
+	static final int LENGTH=15;//数组长度
+	static final int RANGE =100;//数据范围
 }

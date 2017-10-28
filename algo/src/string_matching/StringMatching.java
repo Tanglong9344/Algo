@@ -1,18 +1,16 @@
 /**
- * 字符串匹配
+ * 朴素的字符串匹配算法
  */
 
 package string_matching;
 
 public class StringMatching {
 	public static void main(String[] args) {
-		String source = "1242qwertvvvzx34dd";
-		String dest = "42qwertvvvzx";
 		//This is a test
-		if(stringMatching(source,dest)){
-			System.out.println(source+" 包含 "+dest);
+		if(stringMatching(CommonString.source,CommonString.dest)){
+			System.out.println(CommonString.source+" 包含 "+CommonString.dest);
 		}else{
-			System.out.println(source+" 不包含 "+dest);
+			System.out.println(CommonString.source+" 不包含 "+CommonString.dest);
 		}
 	}
 
