@@ -5,6 +5,7 @@ import java.util.Random;
 
 /**
  * 二分查找
+ * 只适用于顺序存储结构的顺序表
  * @author 唐龙
  */
 public class BinarySearch {
