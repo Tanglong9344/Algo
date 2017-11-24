@@ -10,25 +10,25 @@ public class SumCalculate {
 		for(int i=0;i<N;i++){
 			num=(int)(Math.random()*RANGE);
 			start = System.nanoTime();
-			System.out.print(num+"Ñ­»·ÀÛ¼Ó½á¹û£º"+add(num)+"\t");
+			System.out.print(num+"å¾ªçŽ¯ç´¯åŠ ç»“æžœï¼š"+add(num)+"\t");
 			end = System.nanoTime();
-			System.out.println("ËùÓÃÊ±¼ä£º"+(end-start)+"ns");
+			System.out.println("æ‰€ç”¨æ—¶é—´ï¼š"+(end-start)+"ns");
 
 			start = System.nanoTime();
-			System.out.print(num+"µÝ¹éÇóºÍ½á¹û£º"+addRecursion(num)+"\t");
+			System.out.print(num+"é€’å½’æ±‚å’Œç»“æžœï¼š"+addRecursion(num)+"\t");
 			end = System.nanoTime();
-			System.out.println("ËùÓÃÊ±¼ä£º"+(end-start)+"ns");
+			System.out.println("æ‰€ç”¨æ—¶é—´ï¼š"+(end-start)+"ns");
 
 			start = System.nanoTime();
-			System.out.print(num+"¹«Ê½ÇóºÍ½á¹û£º"+addFormula(num)+"\t");
+			System.out.print(num+"å…¬å¼æ±‚å’Œç»“æžœï¼š"+addFormula(num)+"\t");
 			end = System.nanoTime();
-			System.out.println("ËùÓÃÊ±¼ä£º"+(end-start)+"ns");
+			System.out.println("æ‰€ç”¨æ—¶é—´ï¼š"+(end-start)+"ns");
 		}
 	}
 
-	//Ñ­»·ÀÛ¼Ó
+	//å¾ªçŽ¯ç´¯åŠ 
 	static int add(int n){
-		//n±ØÐë´óÓÚµÈÓÚ0
+		//nå¿…é¡»å¤§äºŽç­‰äºŽ0
 		if(n<0) {
 			return -1;
 		}
@@ -39,9 +39,9 @@ public class SumCalculate {
 		return s;
 	}
 
-	//µÝ¹éÇóºÍ(µÝ¹é»áÊÜjvmÄÚ´æ´óÐ¡µÄÏÞÖÆ)
+	//é€’å½’æ±‚å’Œ(é€’å½’ä¼šå—jvmå†…å­˜å¤§å°çš„é™åˆ¶)
 	static int addRecursion(int n){
-		//n±ØÐë´óÓÚµÈÓÚ0
+		//nå¿…é¡»å¤§äºŽç­‰äºŽ0
 		if(n<0) {
 			return -1;
 		}
@@ -50,17 +50,17 @@ public class SumCalculate {
 		}
 		return (n+addRecursion(n-1));
 	}
-	//¹«Ê½ÇóºÍ s=(n*(n+1))/2
+	//å…¬å¼æ±‚å’Œ s=(n*(n+1))/2
 	static int addFormula(int n){
-		//n±ØÐë´óÓÚµÈÓÚ0
+		//nå¿…é¡»å¤§äºŽç­‰äºŽ0
 		if(n<0) {
 			return -1;
 		}
-		//·ÀÖ¹Êý¾ÝÒç³ö
-		//ÏÈ×ö³ý·¨
+		//é˜²æ­¢æ•°æ®æº¢å‡º
+		//å…ˆåšé™¤æ³•
 		int a = n%2==0?(n/2):n;
 		int b = (n+1)%2==0?((n+1)/2):(n+1);
-		//ÔÙ×ö³Ë·¨
+		//å†åšä¹˜æ³•
 		return a*b;
 	}
 }

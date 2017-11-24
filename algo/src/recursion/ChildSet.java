@@ -4,31 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Ê¹ÓÃµİ¹éºÍ¶ş²æÊ÷ÇóÒ»¸ö¼¯ºÏµÄËùÓĞ×Ó¼¯
- * ¼¯ºÏµÄÃ¿¸öÔªËØÓĞÁ½ÖÖ×´Ì¬£º
- * 1.ÊôÓÚ×Ó¼¯
- * 2.²»ÊôÓÚ×Ó¼¯
- * ÈÎÒâÒ»¸öÔªËØÊıÄ¿ÎªnµÄ¼¯ºÏÆä×Ó¼¯¸öÊıÎª2^n
- * @author ÌÆÁú
+ * ä½¿ç”¨é€’å½’å’ŒäºŒå‰æ ‘æ±‚ä¸€ä¸ªé›†åˆçš„æ‰€æœ‰å­é›†
+ * é›†åˆçš„æ¯ä¸ªå…ƒç´ æœ‰ä¸¤ç§çŠ¶æ€ï¼š
+ * 1.å±äºå­é›†
+ * 2.ä¸å±äºå­é›†
+ * ä»»æ„ä¸€ä¸ªå…ƒç´ æ•°ç›®ä¸ºnçš„é›†åˆå…¶å­é›†ä¸ªæ•°ä¸º2^n
+ * @author å”é¾™
  */
 public class ChildSet {
-	final static int N = 5;//¼¯ºÏÔªËØÊıÄ¿
+	final static int N = 5;//é›†åˆå…ƒç´ æ•°ç›®
 	public static void main(String[] args) {
 		List<String> set = new ArrayList<String>();
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		for(int i=0;i<N;i++){
 			set.add("E"+i);
 		}
-		System.out.println("¼¯ºÏ:\n"+set);
+		System.out.println("é›†åˆ:\n"+set);
 		List<String> setResult = new ArrayList<String>();
-		System.out.println("¼¯ºÏµÄËùÓĞ×Ó¼¯:");
+		System.out.println("é›†åˆçš„æ‰€æœ‰å­é›†:");
 		getChildSet(set,setResult,0);
 	}
 
 	/**
-	 * ¼¯ºÏ×Ó¼¯µÄÇó½â
-	 * @param set ´ıÇó½â¼¯ºÏ
-	 * @param setResult ×Ó¼¯½á¹û
+	 * é›†åˆå­é›†çš„æ±‚è§£
+	 * @param set å¾…æ±‚è§£é›†åˆ
+	 * @param setResult å­é›†ç»“æœ
 	 * @param pos
 	 */
 	static <T> void getChildSet(List<T> set,List<T> setResult,int pos){
@@ -37,10 +37,10 @@ public class ChildSet {
 			System.out.println(setResult);
 		}else{
 			x = (T) set.get(pos);
-			//Ñ¡ÔñÔªËØ
+			//é€‰æ‹©å…ƒç´ 
 			setResult.add(x);
 			getChildSet(set,setResult,pos+1);
-			//²»Ñ¡ÔñÔªËØ
+			//ä¸é€‰æ‹©å…ƒç´ 
 			setResult.remove(x);
 			getChildSet(set,setResult,pos+1);
 		}

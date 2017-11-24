@@ -4,68 +4,68 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * ¶ş·Ö²éÕÒ
- * Ö»ÊÊÓÃÓÚË³Ğò´æ´¢½á¹¹µÄË³Ğò±í
- * @author ÌÆÁú
+ * äºŒåˆ†æŸ¥æ‰¾
+ * åªé€‚ç”¨äºé¡ºåºå­˜å‚¨ç»“æ„çš„é¡ºåºè¡¨
+ * @author å”é¾™
  */
 public class BinarySearch {
-	final static int N = 100000;//Êı¾İÊıÄ¿
-	final static int R = 10000;//Êı¾İ·¶Î§
-	final static int CNT = 100;//²Ù×÷´ÎÊı
+	final static int N = 100000;//æ•°æ®æ•°ç›®
+	final static int R = 10000;//æ•°æ®èŒƒå›´
+	final static int CNT = 100;//æ“ä½œæ¬¡æ•°
 	public static void main(String[] args) {
-		//³õÊ¼»¯Êı¾İ
+		//åˆå§‹åŒ–æ•°æ®
 		int[] searchTable = new int[N+1];
 		Random random = new Random();
 		for(int i=1;i<N+1;i++){
 			searchTable[i] = random.nextInt(R);
 		}
-		//´ÓĞ¡µ½´óÅÅĞò
+		//ä»å°åˆ°å¤§æ’åº
 		Arrays.sort(searchTable);
-		System.out.println("²éÕÒ±í£º"+Arrays.toString(searchTable));
-		int key;//Ä¿±êÊı¾İ
-		int pos;//Êı¾İÎ»ÖÃ
-		int avg=0;//Æ½¾ù²éÕÒÊ±¼ä
-		long start;//¿ªÊ¼Ê±¼ä
-		long end;//½áÊøÊ±¼ä
+		System.out.println("æŸ¥æ‰¾è¡¨ï¼š"+Arrays.toString(searchTable));
+		int key;//ç›®æ ‡æ•°æ®
+		int pos;//æ•°æ®ä½ç½®
+		int avg=0;//å¹³å‡æŸ¥æ‰¾æ—¶é—´
+		long start;//å¼€å§‹æ—¶é—´
+		long end;//ç»“æŸæ—¶é—´
 		for(int i=0;i<CNT;i++){
 			key = searchTable[random.nextInt(N+1)];
-			start = System.nanoTime();//¼ÇÂ¼¿ªÊ¼Ê±¼ä
+			start = System.nanoTime();//è®°å½•å¼€å§‹æ—¶é—´
 			pos = binarySearch(searchTable,key);
-			end = System.nanoTime();//¼ÇÂ¼½áÊøÊ±¼ä
+			end = System.nanoTime();//è®°å½•ç»“æŸæ—¶é—´
 			avg+= end-start;
 			if(0 == pos){
-				System.out.println("Î´ÕÒµ½Ä¿±êÊı¾İ"+key);
+				System.out.println("æœªæ‰¾åˆ°ç›®æ ‡æ•°æ®"+key);
 			}else{
-				System.out.println("Ä¿±êÊı¾İ"+key+"ÔÚÊı×éÖĞµÄÎ»ÖÃÊÇ"+pos);
+				System.out.println("ç›®æ ‡æ•°æ®"+key+"åœ¨æ•°ç»„ä¸­çš„ä½ç½®æ˜¯"+pos);
 			}
 		}
-		System.out.println(CNT+"´Î²éÕÒµÄÆ½¾ù²éÕÒÊ±¼ä£º"+avg/CNT+"ÄÉÃë");
+		System.out.println(CNT+"æ¬¡æŸ¥æ‰¾çš„å¹³å‡æŸ¥æ‰¾æ—¶é—´ï¼š"+avg/CNT+"çº³ç§’");
 	}
 
 	/**
-	 * ¶ş·Ö²éÕÒËã·¨
+	 * äºŒåˆ†æŸ¥æ‰¾ç®—æ³•
 	 * @param searchTable
 	 * @param key
-	 * @return ·µ»ØÄ¿±êÊı¾İÔÚ²éÕÒ±íÖĞµÄÎ»ÖÃ
+	 * @return è¿”å›ç›®æ ‡æ•°æ®åœ¨æŸ¥æ‰¾è¡¨ä¸­çš„ä½ç½®
 	 */
 	static int binarySearch(int[] searchTable,int key){
 		int low = 1;
 		int high = searchTable.length-1;
 		int mid;
-		int times = 0;//Í³¼Æ²éÕÒ´ÎÊı
+		int times = 0;//ç»Ÿè®¡æŸ¥æ‰¾æ¬¡æ•°
 		while(low<=high){
 			times++;
 			mid = (low + high)/2;
 			if(key == searchTable[mid]){
-				System.out.println("²éÕÒ´ÎÊı£º"+times);
-				return mid;//ÕÒµ½Êı¾İ
+				System.out.println("æŸ¥æ‰¾æ¬¡æ•°ï¼š"+times);
+				return mid;//æ‰¾åˆ°æ•°æ®
 			}else if(key < searchTable[mid]){
 				high = mid - 1;
 			}else{
 				low = mid + 1;
 			}
 		}
-		System.out.println("²éÕÒ´ÎÊı£º"+times);
-		return 0;//Î´ÕÒµ½Êı¾İ
+		System.out.println("æŸ¥æ‰¾æ¬¡æ•°ï¼š"+times);
+		return 0;//æœªæ‰¾åˆ°æ•°æ®
 	}
 }
