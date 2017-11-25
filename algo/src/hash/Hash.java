@@ -1,5 +1,7 @@
 package hash;
 
-public class Hash {
-
-}
+/**
+ * 哈希
+ * @author 唐龙
+ */
+public class Hash {}
