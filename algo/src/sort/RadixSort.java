@@ -1,11 +1,3 @@
-/**
- * 基数排序
- * 时间复杂度O(d(N+rd))=O(d.N),空间复杂度O(rd)
- * d:关键字数目，rd关键字取值范围
- *
- * 基本操作过程:数据分配，数据收集。
- */
-
 package sort;
 
 import java.util.ArrayList;
@@ -13,6 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 基数排序
+ * 时间复杂度O(d(N+rd))=O(d.N),空间复杂度O(rd)
+ * d:关键字数目，rd关键字取值范围
+ *
+ * 基本操作过程:数据分配，数据收集。
+ */
 public class RadixSort {
 	public static void main(String[] args) {
 		int [] intArr = new int [CommonFinal.LENGTH];

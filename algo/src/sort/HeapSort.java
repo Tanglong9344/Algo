@@ -1,3 +1,8 @@
+package sort;
+
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * 堆排序
  * 在最坏情况下，时间复杂度O(NlogN)，空间复杂度O(1)
@@ -10,12 +15,6 @@
  * 使用一维数组存储二叉树
  * 其中节点i的左子节点为2i+1,右子节点为2i+2
  */
-
-package sort;
-
-import java.util.Arrays;
-import java.util.Random;
-
 public class HeapSort {
 	public static void main(String[] args) {
 		int [] intArr = new int [CommonFinal.LENGTH];

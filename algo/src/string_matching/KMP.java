@@ -1,12 +1,11 @@
-/**
- * KMP(Knuth-Morris-Pratt)字符串匹配算法
- * http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html
- */
-
 package string_matching;
 
 import java.util.Arrays;
 
+/**
+ * KMP(Knuth-Morris-Pratt)字符串匹配算法
+ * http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html
+ */
 public class KMP {
 	static int[] table;
 	static int cnt=0;//记录比较次数
@@ -15,11 +14,9 @@ public class KMP {
 		table = partialMatchTable(CommonString.dest);
 		System.out.println(CommonString.dest+"的部分匹配表："+Arrays.toString(table));
 		//String matching
-		if(stringMatching(CommonString.source,CommonString.dest)){
-			System.out.println(CommonString.source+" 包含 "+CommonString.dest);
-		}else{
-			System.out.println(CommonString.source+" 不包含 "+CommonString.dest);
-		}
+		String is = stringMatching(CommonString.source,CommonString.dest)?"":"不";
+		System.out.println(CommonString.source+is+"包含 "+CommonString.dest);
+		//comparation times
 		System.out.println("朴素算法比较次数："+String.valueOf(CommonString.source.length()-CommonString.dest.length()+1));
 		System.out.println("KMP算法比较次数："+cnt);
 	}
@@ -46,36 +43,33 @@ public class KMP {
 
 	// String Matching
 	static boolean stringMatching(String source,String dest){
+		int dLen=dest.length();
+		int sLen=source.length();
 		//减枝
-		if(source.length()<dest.length()){
+		if(sLen<dLen){
 			return false;
 		}
 		//判断
 		int index,j;
-		int len=dest.length();
 		//source匹配
 		int i=0;
-		while(i<=source.length()-dest.length()){
+		while(i<=sLen-dLen){
 			cnt++;//比较次数
 			index=i;
 			//dest匹配
-			for(j=0;j<len;j++) {
+			for(j=0;j<dLen;j++) {
 				if(source.charAt(index)!=dest.charAt(j)){
 					break;
 				}else{
 					index++;
 				}
 			}
-			if(j>=len) {
+			if(j>=dLen) {
 				return true;
 			}
 			//如果匹配：后移位数=匹配位数-table[j]
 			//如果不匹配则顺序后移
-			if(index>i){
-				i=(--index)-table[--j];
-			}else{
-				i++;
-			}
+			i=index>i?(--index)-table[--j]:i+1;
 		}
 		return false;
 	}

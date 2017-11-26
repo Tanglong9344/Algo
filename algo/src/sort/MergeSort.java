@@ -1,13 +1,12 @@
-/**
- * 归并排序
- * 时间复杂度O(NlogN),空间复杂度O(N)
- */
-
 package sort;
 
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * 归并排序
+ * 时间复杂度O(NlogN),空间复杂度O(N)
+ */
 public class MergeSort {
 	static int cnt = 0;//记录操作次数
 	public static void main(String[] args) {

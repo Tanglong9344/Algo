@@ -6,13 +6,10 @@ package string_matching;
 
 public class Palindrome {
 	public static void main(String[] args) {
-		String str="qwertrewq";
+		String str="12qwertrewq21";
 		//回文数判断
-		if(palindromeJudge(str)){
-			System.out.println(str+" 是回文数。");
-		}else{
-			System.out.println(str+" 不是回文数。");
-		}
+		String is = palindromeJudge(str)?"":"不";
+		System.out.println(str+is+"是回文数。");
 	}
 
 	//palindrome Judgement
@@ -21,11 +18,11 @@ public class Palindrome {
 		char[] chars = str.toCharArray();
 		char[] charsReverse = new char[len];
 		//生成反序数组
-		for(int i=0;i<chars.length;i++){
+		for(int i=0;i<len;i++){
 			charsReverse[i]=chars[--len];
 		}
 		//字符比较
-		for(int i=0;i<chars.length;i++){
+		for(int i=0;i<len;i++){
 			if(charsReverse[i]!=chars[i]){
 				return false;
 			}

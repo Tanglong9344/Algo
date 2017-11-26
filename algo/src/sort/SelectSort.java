@@ -1,13 +1,12 @@
-/**
- * 选择排序
- * 时间复杂度O(n2),空间复杂度O(1)
- */
-
 package sort;
 
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * 选择排序
+ * 时间复杂度O(n2),空间复杂度O(1)
+ */
 public class SelectSort {
 	public static void main(String[] args) {
 		int [] intArr = new int [CommonFinal.LENGTH];

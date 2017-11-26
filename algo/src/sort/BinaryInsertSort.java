@@ -1,14 +1,13 @@
-/**
- * 二分插入排序
- * 时间复杂度O(n2),空间复杂度O(1)
- * 相比于一般插入排序，减少了比较次数，移动次数不变。
- */
-
 package sort;
 
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * 二分插入排序
+ * 时间复杂度O(n2),空间复杂度O(1)
+ * 相比于一般插入排序，减少了比较次数，移动次数不变。
+ */
 public class BinaryInsertSort {
 	public static void main(String[] args) {
 		int [] intArr = new int [CommonFinal.LENGTH];

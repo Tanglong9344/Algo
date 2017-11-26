@@ -8,18 +8,16 @@ package string_matching;
 
 public class BoyerMoore {
 	public static void main(String[] args) {
-		//This is a test
-		if(stringMatching(CommonString.source,CommonString.dest)){
-			System.out.println(CommonString.source+" 包含 "+CommonString.dest);
-		}else{
-			System.out.println(CommonString.source+" 不包含 "+CommonString.dest);
-		}
+		String is = stringMatching(CommonString.source,CommonString.dest)?"":"不";
+		System.out.println(CommonString.source+is+"包含 "+CommonString.dest);
 	}
 
 	// String Matching(Boyer-Moore算法)
 	static boolean stringMatching(String source,String dest){
+		int dLen=dest.length();
+		int sLen=source.length();
 		//减枝
-		if(source.length()<dest.length()){
+		if(sLen<dLen){
 			return false;
 		}
 		return true;
