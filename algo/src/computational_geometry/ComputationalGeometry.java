@@ -1,5 +1,7 @@
 package computational_geometry;
 
-public class ComputationalGeometry {
-
-}
+/**
+ * 计算几何
+ * @author 唐龙
+ */
+public class ComputationalGeometry {}

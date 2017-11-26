@@ -1,5 +1,7 @@
 package game_theory;
 
-public class NPProblem {
-
-}
+/**
+ * 博弈论
+ * @author 唐龙
+ */
+public class NPProblem {}

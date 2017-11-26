@@ -1,5 +1,7 @@
 package bipartite_graph;
 
-public class BipartiteGraph {
-
-}
+/**
+ *
+ * @author 唐龙
+ */
+public class BipartiteGraph {}
