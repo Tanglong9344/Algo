@@ -1,4 +1,4 @@
-package math;
+package recursion;
 
 /**
  * 阶乘计算
@@ -30,7 +30,7 @@ public class Factorial {
 	}
 
 	//calculate factorial(Iterator)
-	static long facIterator(int num){
+	public static long facIterator(int num){
 		if(num<0){
 			return -1;
 		}

@@ -1,5 +1,6 @@
 package recursion;
 import math.Combination;
+
 /**
  * N个元素进栈出栈所有可能的组合顺序数
  * 1.递归实现(公式：StackRushPop.png)
@@ -10,10 +11,9 @@ public class StackPushPop {
 	public static void main(String[] args) {
 		int n = 5;
 		//递归计算
-		System.out.println(n+"个元素进栈出栈所有可能的组合顺序数："+calStack(n));
+		System.out.println(n+"个元素进栈出栈所有组合："+calStack(n));
 		//组合公式计算
-		System.out.println(n+"个元素进栈出栈所有可能的组合顺序数："
-				+Combination.calCombination(n,2*n)/(n+1));
+		System.out.println(n+"个元素进栈出栈所有组合："+Combination.calCombination(n,2*n)/(n+1));
 	}
 
 	/**

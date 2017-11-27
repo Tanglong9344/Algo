@@ -1,5 +1,7 @@
 package math;
 
+import recursion.Factorial;
+
 /**
  * 组合计算
  * @author 唐龙

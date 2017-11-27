@@ -1,4 +1,4 @@
-package math;
+package recursion;
 
 import java.math.BigInteger;
 
