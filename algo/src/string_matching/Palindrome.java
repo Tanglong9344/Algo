@@ -12,7 +12,7 @@ public class Palindrome {
 		System.out.println(str+is+"是回文数。");
 	}
 
-	//palindrome Judgement
+	// palindrome Judgement
 	static boolean palindromeJudge(String str){
 		int len = str.length();
 		char[] chars = str.toCharArray();
