@@ -9,14 +9,14 @@ import java.util.Random;
  * @author 唐龙
  */
 public class BinarySearch {
-	final static int N = 100000;//数据数目
-	final static int R = 10000;//数据范围
+	final static int N = 10000;//数据数目
+	final static int R = 1000;//数据范围
 	final static int CNT = 100;//操作次数
 	public static void main(String[] args) {
 		//初始化数据
-		int[] searchTable = new int[N+1];
+		int[] searchTable = new int[N];
 		Random random = new Random();
-		for(int i=1;i<N+1;i++){
+		for(int i=0;i<N;i++){
 			searchTable[i] = random.nextInt(R);
 		}
 		//从小到大排序
@@ -66,6 +66,6 @@ public class BinarySearch {
 			}
 		}
 		System.out.println("查找次数："+times);
-		return 0;//未找到数据
+		return -1;//未找到数据
 	}
 }
