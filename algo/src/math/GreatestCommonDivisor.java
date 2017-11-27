@@ -12,12 +12,9 @@ public class GreatestCommonDivisor {
 		for(int i=0;i<N;i++){
 			a=(int)(Math.random()*RANGE+10);
 			b=(int)(Math.random()*RANGE+10);
-			System.out.printf("The Greatest Common Divisor(loopDivide)   "
-					+ " of %d and %d is %d%n",a,b,loopDivide(a,b));
-			System.out.printf("The Greatest Common Divisor(loopSubstract)"
-					+ " of %d and %d is %d%n",a,b,loopSubstract(a,b));
-			System.out.printf("The Greatest Common Divisor(SeekThrough)  "
-					+ " of %d and %d is %d%n",a,b,seekThrough(a,b));
+			System.out.printf("辗转相除法,%d和%d的最大公约数:%d%n",a,b,loopDivide(a,b));
+			System.out.printf("更相减损术,%d和%d的最大公约数:%d%n",a,b,loopSubstract(a,b));
+			System.out.printf("穷举法        ,%d和%d的最大公约数:%d%n",a,b,seekThrough(a,b));
 		}
 	}
 	//辗转相除法
@@ -31,7 +28,7 @@ public class GreatestCommonDivisor {
 		return a;
 	}
 
-	//更相减损数
+	//更相减损术
 	static int loopSubstract(int a,int b){
 		while(a != b){
 			if(a>b){

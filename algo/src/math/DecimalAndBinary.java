@@ -1,11 +1,10 @@
-/**
- * 使用栈实现二进制与十进制之间的转换
- */
-
 package math;
 
 import java.util.Stack;
 
+/**
+ * 使用栈实现二进制与十进制之间的转换
+ */
 public class DecimalAndBinary {
 	static final int N = 10;//the number of numbers
 	static final int RANGE = 100;//the range of numbers
@@ -14,8 +13,8 @@ public class DecimalAndBinary {
 		for(int i=0;i<N;i++){
 			num = (int)(Math.random()*RANGE);
 			int bnum=decimalToBianry(num);
-			System.out.printf("十进制数%2d的二进制数：%d%n",num,bnum);
-			System.out.printf("二进制数%2d的十进制数：%d%n",bnum,bianryToDecimal(bnum));
+			System.out.printf("十进制数%2d的二进制形式：%d%n",num,bnum);
+			System.out.printf("二进制数%2d的十进制形式：%d%n",bnum,bianryToDecimal(bnum));
 		}
 	}
 

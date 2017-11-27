@@ -1,33 +1,39 @@
+package math;
+
 /**
  * 阶乘计算
  * 1，递归方式
- * 2，循环相乘
+ * 2，迭代方式
  */
-
-package math;
-
 public class Factorial {
-	static final int N = 10000;
+	static final int N = 10;
 	static final int RANGE = 20;//the most range of long
 	public static void main(String[] args) {
 		int num;
 		for(int i=0;i<N;i++){
 			num = (int)(Math.random()*RANGE);
-			System.out.println("Factorial(recursion) of " + num + " is " + countFactorialRecursion(num));
-			System.out.println("Factorial(loop) of " + num + " is " + countFactorialLoop(num));
+			System.out.printf("递归,%d的阶乘:%d%n",num,facRecursion(num));
+			System.out.printf("迭代,%d的阶乘:%d%n",num,facIterator(num));
 		}
 	}
 
 	//calculate factorial(recursion)
-	static long countFactorialRecursion(int num){
-		if(num>1) {
-			return (num*(countFactorialRecursion(num-1)));
+	static long facRecursion(int num){
+		if(num<0){
+			return -1;
 		}
-		return 1;
+		//减枝
+		if(0 == num || 1 == num){
+			return 1;
+		}
+		return num == 2 ? 2 : num*(facRecursion(num-1));
 	}
 
-	//calculate factorial(loop)
-	static long countFactorialLoop(int num){
+	//calculate factorial(Iterator)
+	static long facIterator(int num){
+		if(num<0){
+			return -1;
+		}
 		long fac = 1;
 		for(int i=2;i<=num;i++){
 			fac*=i;

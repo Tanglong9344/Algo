@@ -2,8 +2,11 @@ package math;
 
 import java.util.Scanner;
 
+/**
+ * 循环求和
+ * @author 唐龙
+ */
 public class AaddB {
-	@SuppressWarnings("resource")
 	public static void main(String args[]){
 		Scanner cin = new Scanner(System.in);
 		int a, b;
@@ -13,5 +16,6 @@ public class AaddB {
 			b = cin.nextInt();
 			System.out.println(a + b);
 		}
+		cin.close();
 	}
 }
