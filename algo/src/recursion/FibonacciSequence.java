@@ -1,13 +1,12 @@
+package recursion;
+
+import java.util.Random;
+
 /**
  * 菲波那切数列
  * Formula:F(n|n>2)=F(n-1)+F(n-2)
  * F(1)=1,F(2)=1
  */
-
-package recursion;
-
-import java.util.Random;
-
 public class FibonacciSequence {
 	static final int N = 100;//循环次数
 	static final int RANGE = 30;//数据范围
@@ -18,20 +17,27 @@ public class FibonacciSequence {
 		int avg;//平均计算时间
 		long start,end;
 		//分别测试两个方法
-		int loop = 2;
+		int loop = 3;
 		String choose = null;
 		while(loop-->0){
 			avg = 0;
 			for(int i=0;i<N;i++){
 				n = random.nextInt(RANGE);
 				start = System.nanoTime();
-				if(1 == loop){
+				if(2 == loop){
 					Fabonacci(n);
+					//System.out.printf("F(%d)=%d%n",n,Fabonacci(n));
 					choose = "直接    递归";
 				}
-				if(0 == loop){
+				if(1 == loop){
 					FabonacciPre(n);
+					//System.out.printf("F(%d)=%d%n",n,FabonacciPre(n));
 					choose = "预处理递归";
+				}
+				if(0 == loop){
+					FabonacciTail(n,1,1);
+					//System.out.printf("F(%d)=%d%n",n,FabonacciTail(n,1,1));
+					choose = "尾        递归";
 				}
 				end = System.nanoTime();
 				avg += end-start;
@@ -58,5 +64,16 @@ public class FibonacciSequence {
 	 */
 	static int FabonacciPre(int n){
 		return n<=10 ? init[n] : FabonacciPre(n-1) + FabonacciPre(n-2);
+	}
+
+	/**
+	 * get Fabonacci Sequence result in tail recursion
+	 * In genaral,this way has the best efficiency
+	 */
+	static int FabonacciTail(int n,int a,int b){
+		if(n<=0){
+			return -1;
+		}
+		return (1 == n || 2 == n) ? b : FabonacciTail(n-1,b,a+b);
 	}
 }
