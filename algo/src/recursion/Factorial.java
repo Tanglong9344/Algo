@@ -26,7 +26,7 @@ public class Factorial {
 		if(0 == num || 1 == num){
 			return 1;
 		}
-		return num == 2 ? 2 : num*(facRecursion(num-1));
+		return num == 2 ? 2 : num*facRecursion(num-1);
 	}
 
 	//calculate factorial(Iterator)
