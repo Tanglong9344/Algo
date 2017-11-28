@@ -17,7 +17,7 @@ public class BinarySearchRecursion {
 		//初始化数据
 		List<Integer> searchTable = new ArrayList<Integer>();
 		Random random = new Random();
-		for(int i=1;i<N+1;i++){
+		for(int i=0;i<N;i++){
 			searchTable.add(random.nextInt(R));
 		}
 		//从小到大排序
