@@ -4,6 +4,9 @@ import java.util.Stack;
 
 /**
  * 使用栈实现二进制与十进制之间的转换
+ *
+ * @author 唐龙
+ *
  */
 public class DecimalAndBinary {
 	static final int N = 10;//the number of numbers
