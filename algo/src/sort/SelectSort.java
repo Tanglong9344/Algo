@@ -5,7 +5,11 @@ import java.util.Random;
 
 /**
  * 选择排序
+ *
  * 时间复杂度O(n2),空间复杂度O(1)
+ *
+ * @author 唐龙
+ *
  */
 public class SelectSort {
 	public static void main(String[] args) {
@@ -26,12 +30,9 @@ public class SelectSort {
 		System.out.println("选择排序后:"+Arrays.toString(intArr));
 	}
 	//选择排序实现方法
-	static void selectSort(int [] intArr){
-		int i,j,swap;
-		int l=intArr.length;
-		int minPos;//记录某一趟操作下的最小值位置
+	private static void selectSort(int [] intArr){
 		//进行n-1趟操作
-		for(i=0;i<l-1;i++){
+		for(int i=0,j,swap,l=intArr.length,minPos;i<l-1;i++){
 			minPos=i;
 			for(j=i+1;j<l;j++){
 				//升序

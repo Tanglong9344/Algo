@@ -1,11 +1,13 @@
+package string_matching;
+
 /**
  * Boyer-Moore算法
  * 对目标字符串进行倒序比较
  * http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html
+ *
+ * @author 唐龙
+ *
  */
-
-package string_matching;
-
 public class BoyerMoore {
 	public static void main(String[] args) {
 		String is = stringMatching(CommonString.source,CommonString.dest)?"":"不";

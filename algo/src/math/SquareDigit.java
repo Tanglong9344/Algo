@@ -16,8 +16,7 @@ public class SquareDigit {
 	static int squareDigits(int n){
 		String str = String.valueOf(n);
 		StringBuilder sb = new StringBuilder();
-		int len = str.length();
-		for(int i=0;i<len;i++){
+		for(int i=0, len = str.length();i<len;i++){
 			int tmp = Integer.valueOf(str.charAt(i) + "");
 			sb.append(tmp * tmp + "");
 		}

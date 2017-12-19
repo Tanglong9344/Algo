@@ -30,9 +30,8 @@ public class R {
 	/**Remove exclamation point in a low efficiency way*/
 	public static String removeBang(String str) {
 		String[] strs = str.split(" ");
-		int len = strs.length;
 		StringBuilder sb = new StringBuilder();
-		for(int i=0;i<len;i++){
+		for(int i=0, len = strs.length;i<len;i++){
 			int l = strs[i].length();
 			if(l>0) {
 				while(strs[i].charAt(l-1) == '!'){

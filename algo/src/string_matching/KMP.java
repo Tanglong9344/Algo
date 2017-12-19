@@ -5,6 +5,10 @@ import java.util.Arrays;
 /**
  * KMP(Knuth-Morris-Pratt)字符串匹配算法
  * http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html
+ *
+ *
+ * @author 唐龙
+ *
  */
 public class KMP {
 	static int[] next;//模式匹配next数组
@@ -28,9 +32,8 @@ public class KMP {
 		int len = dest.length();
 		int[] next = new int[len];//Partial Match next
 		next[0]=0;//Initialize the first value
-		int i,j;
 		String sub;
-		for(i=1,j=0;i<len;i++){
+		for(int i=1,j=0;i<len;i++){
 			//获取dest的子串
 			sub = dest.substring(0,i+1);
 			//获取子串前缀和后缀中公共部分的最大长度值

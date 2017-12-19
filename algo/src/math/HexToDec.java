@@ -53,7 +53,7 @@ public class HexToDec {
 				tmp = 15;
 				break;
 			default:
-				tmp = Integer.valueOf(ch+"");
+				tmp = Integer.valueOf(ch + "");
 			}
 			result += tmp * Math.pow(16, len - i - 1);
 		}

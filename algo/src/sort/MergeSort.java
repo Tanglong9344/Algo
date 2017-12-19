@@ -4,8 +4,10 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * 归并排序
- * 时间复杂度O(NlogN),空间复杂度O(N)
+ * 归并排序 时间复杂度O(NlogN),空间复杂度O(N)
+ *
+ * @author 唐龙
+ *
  */
 public class MergeSort {
 	static int cnt = 0;//记录操作次数

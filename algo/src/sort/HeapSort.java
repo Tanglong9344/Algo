@@ -36,9 +36,8 @@ public class HeapSort {
 	}
 
 	public static  void heapSort(int[] arr){
-		int len=arr.length;
 		//循环建堆
-		for(int i=1;i<len;i++){
+		for(int i=1,len=arr.length;i<len;i++){
 			//建堆
 			buildMaxHeap(arr,len-i);
 			System.out.printf("第%2d次建立大顶堆    :%s%n",i,Arrays.toString(arr));
@@ -49,9 +48,8 @@ public class HeapSort {
 	}
 	//对数组从0到len建大顶堆
 	private static void buildMaxHeap(int[]arr, int len) {
-		int i,k,big;
 		//从最后一个节点的父节点开始
-		for(i=(len-1)/2;i>=0;i--){
+		for(int i=(len-1)/2,k,big;i>=0;i--){
 			//k保存正在判断的节点
 			k=i;
 			//如果当前k节点的子节点存在

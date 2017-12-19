@@ -30,8 +30,7 @@ public class Harming {
 		if(n == 1) {
 			return arr[1];
 		}
-		int i,i2=1,i3=1,i5=1;
-		for(i=2;i<=n;i++){
+		for(int i=2,i2=1,i3=1,i5=1;i<=n;i++){
 			arr[i] = min(arr[i2]*2,arr[i3]*3,arr[i5]*5);
 			if(arr[i] == arr[i2]*2){
 				i2++;

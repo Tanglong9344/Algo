@@ -5,7 +5,11 @@ import java.util.Random;
 
 /**
  * 希尔排序
+ *
  * 时间复杂度<O(n2),空间复杂度O(1)
+ *
+ * @author 唐龙
+ *
  */
 public class ShellSort {
 	public static void main(String[] args) {
@@ -25,8 +29,9 @@ public class ShellSort {
 		//希尔排序后
 		System.out.println("希尔排序后:"+Arrays.toString(intArr));
 	}
-	//希尔排序实现方法
-	static void shellSort(int[] intArr){
+
+	/**希尔排序实现方法*/
+	private static void shellSort(int[] intArr){
 		int i,j,k;
 		int len=intArr.length;
 		int gap=len;//每个分组间的增量

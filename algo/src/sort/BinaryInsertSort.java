@@ -29,10 +29,8 @@ public class BinaryInsertSort {
 	}
 	//折半折半插入排序实现方法
 	static void binaryInsertSort(int[] intArr){
-		int i,j;
 		int len=intArr.length;
-		int tmp,low,high,mid;
-		for(i=1;i<len;i++){
+		for(int i=1,j,tmp,low,high,mid;i<len;i++){
 			tmp=intArr[i];
 			low = 0;
 			high = i-1;

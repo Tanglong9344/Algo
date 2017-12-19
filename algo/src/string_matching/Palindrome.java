@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  * 回文数判断
+ *
+ * @author 唐龙
+ *
  */
 public class Palindrome {
 	public static void main(String[] args) {
@@ -21,47 +24,27 @@ public class Palindrome {
 
 	//回文数判断
 	static void test(String str){
-		String is = palindromeJudgeHt(str) ? "" : "不";
-		System.out.printf("%8s%s是回文数%n",str,is);
+		System.out.printf("%8s%s是回文数%n",str, (palindrome(str) ? "" : "不"));
+		System.out.printf("%8s%s是回文数%n",str, (palindromeReverse(str) ? "" : "不"));
 	}
 
-	// palindrome Judgement(head to tail)
-	static boolean palindromeJudgeHt(String str){
+	// palindrome Judgement(compare front half part and back half part)
+	static boolean palindrome(String str){
 		// 空串或单字符串一定是回文
 		if(str.length()<=1){
 			return true;
 		}
-		char[] chars = str.toCharArray();
 		//字符串前半部分和后半部分比较
 		for(int i=0,j=str.length()-1;i<j;i++,j--){
-			if(chars[j] != chars[i]){
+			if(str.charAt(j) != str.charAt(i)){
 				return false;
 			}
 		}
 		return true;
 	}
 
-	// palindrome Judgement(Reverse Array)
-	// This is not a good method
-	// just a way to other thought
-	static boolean palindromeJudge2(String str){
-		int len = str.length();
-		// 空串或单字符串一定是回文
-		if(len<=1){
-			return true;
-		}
-		char[] chars = str.toCharArray();
-		char[] charsReverse = new char[len];
-		//生成反序数组
-		for(int i=0;i<len;i++){
-			charsReverse[i]=chars[--len];
-		}
-		//字符比较
-		for(int i=0;i<len;i++){
-			if(charsReverse[i]!=chars[i]){
-				return false;
-			}
-		}
-		return true;
+	// palindrome Judgement(Reverse String)
+	static boolean palindromeReverse(String str){
+		return new StringBuilder(str).reverse().toString().equals(str);
 	}
 }

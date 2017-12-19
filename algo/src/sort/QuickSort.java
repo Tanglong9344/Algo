@@ -5,7 +5,11 @@ import java.util.Random;
 
 /**
  * 快速排序
+ *
  * 平均时间复杂度O(NlogN)，最坏时间复杂度O(N2)，空间复杂度O(logN)
+ *
+ * @author 唐龙
+ *
  */
 public class QuickSort {
 	private static int sum=0;//统计操作次数

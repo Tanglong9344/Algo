@@ -44,10 +44,8 @@ public class BubbleSort {
 	}
 	//冒泡排序实现方法1
 	static void bubbleSort1(int [] intArr){
-		int i,j;
-		int len=intArr.length;
 		//进行n-1趟操作
-		for(i=0;i<len-1;i++){
+		for(int i=0,j,len=intArr.length;i<len-1;i++){
 			for(j=len-1;j>i;j--){
 				//升序
 				if(intArr[j]<intArr[j-1]){
@@ -61,11 +59,9 @@ public class BubbleSort {
 
 	//冒泡排序实现方法2，在实现方法1的基础加上有序判断
 	static void bubbleSort2(int [] intArr){
-		int i,j;
-		int len=intArr.length;
 		boolean stop = false;//如果已经有序则停止操作
 		//进行n-1趟操作
-		for(i=0;i<len-1&&!stop;i++){
+		for(int i=0,j,len=intArr.length;i<len-1&&!stop;i++){
 			stop=true;
 			for(j=0;j<len-i-1;j++){
 				//升序

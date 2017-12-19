@@ -11,6 +11,9 @@ import java.util.Random;
  * d:关键字数目，rd关键字取值范围
  *
  * 基本操作过程:数据分配，数据收集。
+ *
+ * @author 唐龙
+ *
  */
 public class RadixSort {
 	public static void main(String[] args) {
@@ -32,7 +35,6 @@ public class RadixSort {
 	}
 
 	//基数排序实现方法
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void radixSort(int[] arr){
 		//首先确定排序的趟数;
 		//找出最大值
@@ -49,15 +51,14 @@ public class RadixSort {
 			time++;
 		}
 		//建立10个队列，分别用于存储各个位数数字为0-9的数据
-		List<ArrayList> lists=new ArrayList<ArrayList>();
+		List<ArrayList<Integer>> lists=new ArrayList<ArrayList<Integer>>();
 		ArrayList<Integer> list = null;//用于暂存数据
 		for(int i=0;i<10;i++){
 			list=new ArrayList<Integer>();
 			lists.add(list);
 		}
-		int i,j,x,k,cnt;
 		//进行time次分配和收集;
-		for(i=1;i<=time;i++){
+		for(int i=1,j,x,k,cnt;i<=time;i++){
 			//分配数组元素;
 			for(j=0;j<arr.length;j++){
 				//得到数字的第time位数;

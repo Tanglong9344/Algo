@@ -6,6 +6,9 @@ import java.util.Random;
 /**
  * 一般插入排序
  * 时间复杂度O(n2),空间复杂度O(1)
+ *
+ * @author 唐龙
+ *
  */
 public class InsertSort {
 	public static void main(String[] args) {
@@ -29,10 +32,7 @@ public class InsertSort {
 
 	//插入排序实现方法
 	static void insertSort(int[] intArr){
-		int i,j;
-		int len=intArr.length;
-		int tmp;
-		for(i=1;i<len;i++){
+		for(int i=1,j,tmp,len=intArr.length;i<len;i++){
 			tmp=intArr[i];
 			//数据移动
 			for(j=i-1;j>=0&&intArr[j]>tmp;j--){

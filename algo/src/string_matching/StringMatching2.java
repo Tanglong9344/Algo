@@ -2,6 +2,9 @@ package string_matching;
 
 /**
  * 朴素的字符串匹配(模式匹配)算法2
+ *
+ * @author 唐龙
+ *
  */
 public class StringMatching2 {
 	public static void main(String[] args) {
@@ -30,6 +33,6 @@ public class StringMatching2 {
 				i=i-j+1;
 			}
 		}
-		return j>=dLen?true:false;
+		return j >= dLen;
 	}
 }
