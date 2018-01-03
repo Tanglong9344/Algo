@@ -14,7 +14,10 @@ import java.util.Random;
  *
  * 使用一维数组存储二叉树
  * 其中节点i的左子节点为2i+1,右子节点为2i+2
+ *
+ *  * @author 唐龙
  */
+
 public class HeapSort {
 	public static void main(String[] args) {
 		int [] intArr = new int [CommonFinal.LENGTH];
