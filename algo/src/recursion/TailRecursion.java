@@ -15,13 +15,13 @@ public class TailRecursion {
 		start = System.nanoTime();
 		result = commonRecursion(n);
 		end = System.nanoTime();
-		System.out.println("Common Recursion:%d%nResult:" + n);
+		System.out.println("Common Recursion: " + n);
 		System.out.println("Result: " + result + "\nTime: " + (end - start));
 
 		start = System.nanoTime();
 		result = tailRecursion(n, 1);
 		end = System.nanoTime();
-		System.out.println("Tail   Recursion:%d%nResult:" + n);
+		System.out.println("Tail   Recursion: " + n);
 		System.out.println("Result: " + result + "\nTime: " + (end - start));
 	}
 
@@ -29,19 +29,19 @@ public class TailRecursion {
 	 * buffer data using stack
 	 */
 	private static long commonRecursion(int n) {
-		if(n<=0) {
+		if(n<0) {
 			return -1;
 		}
-		return n==1? 1 : n * commonRecursion(n-1);
+		return n==0? 1 : n * commonRecursion(n-1);
 	}
 
 	/** tail recursion
 	 * storage data using argument
 	 */
 	private static long tailRecursion(int n, long a) {
-		if(n<=0) {
+		if(n<0) {
 			return -1;
 		}
-		return n==1? a : tailRecursion(n-1, n * a);
+		return n==0? a : tailRecursion(n-1, n * a);
 	}
 }
