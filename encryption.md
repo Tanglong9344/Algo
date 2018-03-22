@@ -1,0 +1,13 @@
+# 加密算法
++ 对称加密
+	+ AES
+	+ DES
+	+ 3DES
++ 非对称加密
+	+ RSA
+	+ DSA
+	+ ECC
++ 线性散列
+	+ MD5
+	+ SHA
+	+ HMAC
