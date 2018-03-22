@@ -12,7 +12,7 @@
 + [字符串匹配](https://github.com/Tanglong9344/Algo/tree/master/algo/src/string_matching)
 + [预处理和筛选](https://github.com/Tanglong9344/algo/tree/master/algo/src/filter)
 + [计算几何问题](https://github.com/Tanglong9344/Algo/tree/master/algo/src/computational_geometry)
-
++ [加密算法](encryption.md)
 ---
 ### Online Program
 + [HackerRank](https://www.hackerrank.com/dashboard)
